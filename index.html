@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="index.css">
+    <script src='index.js'></script>
+</head>
+<body>
+	<script>
+	//原型对象
+		// function Person(name,age,sex,language){
+		// 	this.name=name;
+		// 	this.age=age;
+		// 	this.sex=sex;
+		// 	this.language=language;
+		// }
+  //       Person.prototype={
+  //       	sleep:function(){
+  //       		alert('休息');
+  //       	},
+  //       	play:function(){
+  //       		alert(`${this.name}诚会玩儿`);
+  //       	}
+  //       }
+  //       Person.prototype.eat=function(){
+  //       	alert('吃饭');
+  //       }
+  //       let zhangsan=new Person('zhangsan',20,'男','English');
+  //       let lisi=new Person('lisi',20,'女','French');
+  //       console.log(zhangsan);
+  //       console.log(lisi);
+  //       zhangsan.sleep();
+  //       lisi.play();
+  //判断对象
+           // function Student(){
+           // 	this.name='student';
+           // } 
+           // function Person(){
+           // 	this.name='person';
+           // }
+           // let zhangsan=new Student();            
+           // let lisi=new Person(); 
+           // console.log(zhangsan instanceof Student);           
+           // console.log(zhangsan instanceof Person); 
+  //继承
+              // function Student(){
+              // 	this.calss='wuif1707';
+              // 	this.number=123456;
+              // 	this.skill=function(){
+              // 		alert('fullstack');
+              //   }
+              // }
+              // Student.prototype.eat=function(){
+              // 	alert('吃饭');
+              // }
+              // function Person(){
+              // 	this.name='zhangsan';
+              // 	this.age=20;
+              // 	this.sex='男';
+              // 	this.hobby=function(){
+              // 		alert('play computer games');
+              // 	}
+              // }
+              // // Person.prototype.sleep=function(){
+              // // 	alert('睡觉');
+              // // }
+              // Person.prototype=new Student();
+              // Person.prototype.sleep=function(){
+              // 	alert('睡觉');
+              // }
+              // let lisi=new Person();
+              // console.log(lisi);  
+              // console.log(lisi.__proto__==Person.prototype);
+              // console.log(Person.prototype.__proto__==Student.prototype);
+              // console.log(Student.prototype.__proto__==Object.prototype);
+              // console.log(Object.prototype.__proto__==null);
+ // String字符串
+              // let str='ab张三cd';
+              // str.length=1;
+              // let char=str.charAt(1);
+              // console.log(char);
+              // let charCode=str.charCodeAt(1);
+              // console.log(charCode);
+              // let fromChar=String.fromCharCode(100);
+              // console.log(fromChar);
+              // let str='abcdabcd';
+              // let index=str.indexOf('abcd');
+              // console.log(index);
+              // let index1=str.lastIndexOf('abcd');
+              // console.log(index1);
+              // let includes=str.includes('abcd');
+              // console.log(includes);
+              // let slice=str.slice(0,4);
+              // let slice=str.slice(0,-1);
+              // let slice=str.slice(0,str.length-1);
+              // let slice=str.slice(2);
+              // console.log(slice);
+              // let substring=str.substring(0,4);
+              // console.log(substring);
+              // let substr=str.substr(0,2);
+              // console.log(substr);
+              // let replace=str.replace('abcd','****');
+              // console.log(replace);
+              // let replaceAll=replaceAll(str,'abcd');
+ //
+              // let str='abcdefgabcdefgabcd';              
+              // let result=replaceAll(str,'abcd');
+              // console.log(result);
+              // function replaceAll(str,rstr){
+              // 	// let star='';
+              // 	// for(i=0;i<rstr.length;i++){
+              // 	// 	star+='*';
+              // 	// }
+              // 	let star='*'.repeat(rstr.length);
+              //    while(str.includes(rstr)){
+              //      str=str.replace(rstr,'****');
+              //    }
+              //    return str;
+              // }
+              // let str='   abcdefgabcdefgabcd   ';   
+              // // let result=str.match('abc');
+              // // console.log(result);
+              // let result=str.trim();
+              // console.log(result);
+              // console.log(str);
+              // let str='a b c d e';
+              // // let arr=str.split(' ',5);
+              // console.log(str.toUpperCase());
+              // let str1='A B C D E';
+              // console.log(str1.toLowerCase());
+              // document.write(str.fontcolor('gold'));
+              // document.write(str.fontsize(7));
+              // document.write(str.sup());
+              // document.write(str.sub());
+              // document.write(str.small());
+              // document.write(str.big());
+              // console.log(arr);
+ // 找回某个字符串中所有特定字符串的位置，并将下标返回到一个数组         
+              let url='https://www.baidu.comhttps://www.baidu.comhttps://www.baidu.comhttps://www.baidu.comhttps://www.baidu.comhttps://www.baidu.comhttps://www.baidu.comhttps://www.baidu.comhttps://www.baidu.comhttps://www.baidu.comhttps://www.baidu.comhttps://www.baidu.comhttps://www.baidu.comhttps://www.baidu.com';
+              let result=Position(url,'baidu');
+              console.log(result);
+              // function Position(str,rstr){
+              // 	let newarr=[];
+              // 	let star='*'.repeat(rstr.length);
+              //     while(str.includes(rstr)){
+              //     	// newarr[newarr.length]=str.indexOf(rstr);                  	
+              //     	newarr.push(str.indexOf(rstr));                  	
+              //     	str=str.replace(rstr,star);
+              //     }
+              //     return newarr;
+              // }
+              function Position(str,rstr){
+              	let newarr=[];
+              	let star='*'.repeat(rstr.length);
+              	for(i=0;i<url.length;i++){
+              		if((str.substr(i,5)).includes(rstr)){
+              			newarr.push(str.indexOf(rstr)); 
+              			str=str.replace(rstr,star);
+              		}
+              	}
+              	return newarr;
+              }
+	</script>
+</body>
+</html>
